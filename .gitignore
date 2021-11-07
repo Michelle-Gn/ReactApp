@@ -4,6 +4,7 @@ bin-release/
 [Oo]bj/
 [Bb]in/
 node_modules/
+.client/dist/bundle.js
 
 # Other files and folders
 .settings/
