@@ -1,15 +1,17 @@
+// render all of the sample data
 import React from 'react';
-import App from './app.jsx';
 
 const EmployeeData = function (props) {
-
   return(
     <div>
       {props.employees.map((item, index) => (
-        <div className="card" key={index} onClick={()=> props.changeView()}>{item.name} {item.children?.length && <EmployeeData employees={item.children}/>}
-        </div>
-      ))}
-    </div>)
-}
+        <div key={index} onClick={() => props.changeView()}>
+          {item.name}
+          {item.children?.length && <EmployeeData employees={item.children} changeView={props.changeView}/>}
+        </div>))}
+    </div>
+  )
+};
 
 export default EmployeeData;
+

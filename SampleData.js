@@ -29,7 +29,6 @@ const treeData = [{
       "name": "Child 2"
     }
   ]
-}
-]
+}]
 
 export default treeData;
