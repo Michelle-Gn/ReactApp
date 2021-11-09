@@ -1,6 +1,6 @@
 import React from 'react';
-import EmployeeData from './employeeData.jsx';
-import treeData from '../../../SampleData.js';
+import Tree from './employeeData.jsx';
+import toppingOptions from '../../../SampleData.js';
 
 class App extends React.Component {
 
@@ -8,29 +8,18 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      employees: treeData,
-      rootView: true
+      toppings: toppingOptions
     };
 
-    this.changeView = this.changeView.bind(this);
-  }
-
-  changeView(){
-    this.setState({
-      rootView: !this.state.rootView
-    })
   }
 
   render(){
-    if (this.state.rootView){
-      return (
-        <div onClick={() => this.changeView()}>{this.state.employees[0].name}</div>
-      )
-    } else {
-      return(
-      <EmployeeData employees={this.state.employees} changeView={this.changeView}/>
+    return(
+      <Tree toppings={this.state.toppings}/>
+      // <Tree toppings={this.state.toppings} />
     )}
-  }
-}
+};
+
 
 export default App;
+
